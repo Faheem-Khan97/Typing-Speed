@@ -1,138 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calci</title>
-    <link rel="stylesheet" href="./style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS Typing Speed Test</title>
+    <script src="script.js" async></script>
+  
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <section class="grid-calci">
-        <h1>Calculator</h1>
-        <input type="text" id="numInput" disabled>
+    <header class="masthead">
+        <h1>Test Your Typing Speed</h1>
+    </header>
+    <main class="main">
+        <article class="intro">
+            <p>This is a typing test. Your goal is to duplicate the provided text, EXACTLY, in the field below. The timer starts when you start typing, and only stops when you match this text exactly. Good Luck!</p>
+        </article><!-- .intro -->
+        <section class="test-area">
+            <div id="origin-text">
+                <p>The text to test.</p>
+            </div><!-- #origin-text -->
 
-        <div class="buttons">
-            <button class="button" onclick = "buttonClicked(event)">9</button>
-            <button class="button" onclick = "buttonClicked(event)">8</button>
-            <button class="button" onclick = "buttonClicked(event)">7</button>
-            <button class="button" onclick = "opClicked(event)">+</button>
-        </div>
-        <div class="buttons">
-            <button class="button" onclick = "buttonClicked(event)">6</button>
-            <button class="button" onclick = "buttonClicked(event)">5</button>
-            <button class="button" onclick = "buttonClicked(event)">4</button>
-            <button class="button" onclick = "opClicked(event)">-</button>
-        </div>
-        <div class="buttons">
-            <button class="button" onclick = "buttonClicked(event)">3</button>
-            <button class="button" onclick = "buttonClicked(event)">2</button>
-            <button class="button" onclick = "buttonClicked(event)">1</button>
-            <button class="button" onclick = "opClicked(event)">*</button>
-        </div>
-        <div class="buttons">
-            <button class="button" onclick = "buttonClicked(event)">.</button>
-            <button class="button" onclick = "buttonClicked(event)">0</button>
-            <button class="button" onclick = "opClicked(event)">/</button>
-            <button class="button" onclick = "returnClicked(event)">=</button>
-        </div>
+            <div class="test-wrapper" id="ret">
+                <textarea id="test-area" name="textarea" rows="6" placeholder="The clock starts when you start typing."></textarea>
+            </div><!-- .test-wrapper -->
 
-        <button type="reset" id="clear">
-                CLEAR
-        </button>
+            <div class="meta">
+                <section id="clock">
+                    <div class="timer">00:00:00</div>
+                </section>
 
-    </section>
-    <script>
+                <button id="reset">Start over</button>
+            </div><!-- .meta -->
+        </section><!-- .test-area -->
+    </main>
 
-    let input = document.querySelector('#numInput');
-    let resetButton = document.querySelector('#clear');
-    let firstNum ;
-    let secNum;
-    let opbool = true;
-    
-    resetButton.addEventListener('click', () => {
-
-        window.location.href = 'index.html';
-
-    });
-
-    function buttonClicked(e){
-        e.preventDefault();
-
-    if(opbool == true){
-
-        if(firstNum == undefined){
-            firstNum = e.target.outerText;
-            input.value = e.target.outerText;
-        }
-            
-        else{
-            firstNum += e.target.outerText;
-            input.value += e.target.outerText;;
-        }
-    }
-
-
-    else{
-        if(secNum == undefined){
-            secNum = e.target.outerText;
-            input.value += e.target.outerText;
-            
-        }
-            
-        else{
-            secNum += e.target.outerText;
-            input.value += e.target.outerText;
-
-
-        }
-        console.log(secNum)
-
-    }
-    //console.log(firstNum, secNum);
-
-    }
-    
-    let operator;
-   
-    function opClicked(e){
-        e.preventDefault();
-        console.log("inside operator");
-
-        opbool = false;
-        operator = e.target.outerText;
-        input.value += " "+ operator + " ";
-
-    }
-
-    let res = 0;
-
-    function returnClicked(e){
-        e.preventDefault();
-
-        console.log("inside ====");
-        if(operator == "+"){
-
-            res = Number(firstNum)+ Number(secNum);
-        }
-
-        if(operator == "-"){
-
-        res = Number(firstNum) - Number(secNum);
-        }
-        if(operator == "*"){
-
-            res = Number(firstNum) * Number(secNum);
-        }
-        if(operator == "/"){
-
-        res = Number(firstNum)/ Number(secNum);
-        }
-
-        input.value += " = " + res; 
-    }
-
-
-    </script>
 </body>
+
 </html>
