@@ -2,8 +2,7 @@
 Typography
 --------------------------------------------------------------*/
 
-body,
-button,
+
 input,
 select,
 textarea {
@@ -113,6 +112,7 @@ body {
     padding: 1em 2em;
     background-color: #0D1B2E;
     color: white;
+    
 }
 
 .masthead h1 {
@@ -123,6 +123,7 @@ body {
     padding: 2em 2em;
     color: #ffffff;
     background: #429890;
+    line-height: 1.5;
 }
 
 
@@ -130,11 +131,13 @@ body {
 .test-area {
     margin: 0 auto;
     max-width: 550px;
+    
 }
 
 .test-area {
     margin-bottom: 4em;
     padding: 0 2em;
+    
 }
 
 .test-wrapper {
@@ -146,6 +149,7 @@ body {
     margin: 1em 0;
     padding: 1em 1em 0;
     background-color: #ededed;
+    line-height: 1.5;
 }
 
 #origin-text p {
@@ -174,12 +178,15 @@ body {
 }
 
 #reset {
-    padding: .5em 1em;
+    padding: 5px 15px;
     font-size: 1.2em;
+    line-height: 1;
     font-weight: bold;
     color: #E95D0F;
     background: white ;
-    border: 10px solid #E95D0F;
+    border: 5px solid #E95D0F;
+    border-radius: 5%;
+    cursor: pointer;
 }
 
 #reset:hover {

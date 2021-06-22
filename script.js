@@ -5,6 +5,7 @@ const resetButton = document.querySelector("#reset");
 const theTimer = document.querySelector(".timer");
 let interval;
 let time = [0,0,0,0];
+
 // Add leading zero to numbers 9 or below (purely for aesthetics):
 function leadingZero(time){
 
@@ -64,7 +65,7 @@ function startTimer(){
 function resetAll(e){
     e.preventDefault();
     testArea.value = "";
-    bool = false;
+    bool = true;
     testWrapper.style.borderColor = "gray";
 
     time = [0,0,0,0];
